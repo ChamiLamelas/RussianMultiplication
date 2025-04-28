@@ -1,12 +1,12 @@
-def multiply_literal(num1, num2): 
+def multiply_literal(left, right): 
     lefts = list() 
     rights = list() 
 
-    while num1 > 0: 
-        lefts.append(num1)
-        rights.append(num2)
-        num1 //= 2 
-        num2 *= 2 
+    while left > 0: 
+        lefts.append(left)
+        rights.append(right)
+        left //= 2 
+        right *= 2 
 
     right_sum = 0 
 
@@ -16,15 +16,15 @@ def multiply_literal(num1, num2):
 
     return right_sum
 
-def multiply_pythonic(num1: int, num2: int) -> int: 
+def multiply_pythonic(left: int, right: int) -> int: 
     lefts = list() 
     rights = list() 
 
-    while num1 > 0: 
-        lefts.append(num1)
-        rights.append(num2)
-        num1 >>= 1 
-        num2 <<= 1 
+    while left > 0: 
+        lefts.append(left)
+        rights.append(right)
+        left >>= 1 
+        right <<= 1 
 
     return sum(r for l, r in zip(lefts, rights) if l % 2 == 1)
     
